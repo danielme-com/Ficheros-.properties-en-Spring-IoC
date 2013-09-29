@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- ruta en la que se buscarán los beans anotados -->
+	<context:component-scan base-package="com.danielme" />
+
+	<context:property-placeholder location="classpath:config.properties" />
+
+	<!-- definición de los valores en los properties como constantes para su 
+		inyección -->
+	<!-- <bean id="cantidad" class="java.lang.Integer"> <constructor-arg value="${valor.cantidad}"/> 
+		</bean> <bean id="usuario" class="java.lang.String"> <constructor-arg value="${valor.usuario}"/> 
+		</bean> -->
+
+	<!-- para versiones anteriores a 2.5 -->
+	<!-- <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> 
+		<property name="location"> <value>classpath:config.properties</value> </property> 
+		</bean> -->
+
+	<!-- <bean id="beanSpring" class="com.danielme.blog.spring.properties.BeanSpring"> 
+		<property name="cantidad" value="${valor.cantidad}" /> <property name="usuario" 
+		value="${valor.usuario}" /> </bean> -->
+
+</beans>
+
